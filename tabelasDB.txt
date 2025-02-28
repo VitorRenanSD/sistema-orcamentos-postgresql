@@ -3,22 +3,25 @@
 
 CREATE TABLE planta (
   id SERIAL PRIMARY KEY,
-  nome VARCHAR(40),
-  telefone VARCHAR(20)
+  nome VARCHAR(40) NOT NULL,
+  telefone VARCHAR(20) NOT NULL,
+  email VARCHAR(80) NOT NULL
 );
 
-CREATE TABLE ordem (
+CREATE TABLE orcamento (
   id SERIAL PRIMARY KEY,
-  nome_cliente VARCHAR(40),
-  telefone_cliente VARCHAR(20),
-  dt_ordem TIMESTAMP
+  nome VARCHAR(40) NOT NULL,
+  telefone VARCHAR(20) NOT NULL,
+  email VARCHAR(80) NOT NULL,
+  defeito_apresentado VARCHAR(320) NOT NULL,
+  dt_ordem TIMESTAMP NOT NULL
 );
 
-CREATE TABLE itens_ordem (
+CREATE TABLE itens_orcamento (
   id SERIAL PRIMARY KEY,
-  fk_ordem INT,
-  descricao VARCHAR(40),
-  valor DECIMAL(10,2),
-  quantidade INT,
-  FOREIGN KEY(fk_ordem) REFERENCES ordem(id)
+  fk_orcamento INT NOT NULL,
+  descricao VARCHAR(40) NOT NULL,
+  valor DECIMAL(10,2) NOT NULL,
+  quantidade INT NOT NULL,
+  FOREIGN KEY(fk_orcamento) REFERENCES orcamento(id)
 );
