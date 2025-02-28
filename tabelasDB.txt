@@ -1,7 +1,7 @@
 -- Querys criadas usando como database o PostgreSQL, a sintaxe pode ser levemente diferente de outras DB como MySQL e SQLServer
 -- Apenas rodar este .txt em sua base de dados vazia que terá todas as tabelas necessárias
 
-CREATE TABLE config_dono (
+CREATE TABLE planta (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(40),
   telefone VARCHAR(20)
